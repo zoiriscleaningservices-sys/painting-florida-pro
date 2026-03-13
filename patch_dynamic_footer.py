@@ -167,7 +167,7 @@ def build_mega_footer(hubs_list):
 
                         {{/* Bottom Copyright Bar */}}
                         <div className="pt-8 border-t border-brand-dark/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium text-brand-dark/40">
-                            <p>© {{{{new Date().getFullYear()}}}} Painting Florida Pros. All rights reserved.</p>
+                            <p>&copy; {{new Date().getFullYear()}} Painting Florida Pros. All rights reserved.</p>
                             <div className="flex gap-6">
                                 <a href="#" className="hover:text-brand-orange transition-colors">Privacy Policy</a>
                                 <a href="#" className="hover:text-brand-orange transition-colors">Terms of Service</a>
