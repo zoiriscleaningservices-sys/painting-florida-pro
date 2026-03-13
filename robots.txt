@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Block AI scrapers and aggressive analytics bots that waste server resources
+User-agent: GPTBot
+Disallow: /
+User-agent: ChatGPT-User
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+User-agent: Claude-Web
+Disallow: /
+User-agent: omgili
+Disallow: /
+User-agent: omgilibot
+Disallow: /
+
+# Point directly to the sitemap to ensure instant Google/Bing discovery
+Sitemap: https://paintingfloridapros.com/sitemap.xml

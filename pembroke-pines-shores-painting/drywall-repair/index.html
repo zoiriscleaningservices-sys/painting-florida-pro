@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pembroke Pines Shores Drywall Repair Experts - Free Estimates</title>
+    <meta name="description" content="Looking for elite drywall texturing around Pembroke Pines Shores? Our licensed Florida contractors specialize in high-end finishes that resist humidity. Call today for a free estimate!">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#F27D26',
+                            yellow: '#FFD700',
+                            blue: '#0056b3',
+                            green: '#32CD32',
+                            dark: '#000000',
+                            light: '#F9F8F6',
+                            paper: '#FFFFFF',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- React & Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Framer Motion -->
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+
+    <!-- LeadConnector Form Script -->
+    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+    <!-- SEO Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HousePainter",
+      "name": "Painting Florida Pros - Pembroke Pines Shores",
+      "image": "https://i.ibb.co/LdJySH38/956a318f-590e-48f6-a6ea-098fea818a4f-Picsart-Background-Remover.png",
+      "@id": "",
+      "url": "https://paintingfloridapros.com/drywall-repair.html",
+      "telephone": "+19544664652",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pembroke Pines Shores",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.7617,
+        "longitude": -80.1918
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://www.instagram.com/paintingfloridapros/",
+        "https://x.com/paintingflpros",
+        "https://www.pinterest.com/paintingflorida/_profile/"
+      ]
+    }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #F9F8F6;
+            color: #000000;
+            overflow-x: hidden;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+        
+
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F8F6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #F27D26;
+            border-radius: 10px;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #F27D26, #FFD700, #32CD32);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Error logging
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.error("JS Error:", message, "at", source, lineno, colno);
+            const root = document.getElementById('root');
+            if (root && root.innerHTML === "") {
+                root.innerHTML = `<div style="color: white; padding: 20px; text-align: center;">
+                    <h1 style="color: #F27D26;">Oops! Something went wrong.</h1>
+                    <p>${message}</p>
+                    <button onclick="location.reload()" style="background: #F27D26; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Reload Page</button>
+                </div>`;
+            }
+        };
+
+        const { useState, useEffect, useRef } = React;
+        
+        // Framer Motion UMD export is often 'Motion' or 'framerMotion'
+        const motion = window.Motion?.motion || window.framerMotion?.motion || (({ children, ...props }) => <div {...props}>{children}</div>);
+        const AnimatePresence = window.Motion?.AnimatePresence || window.framerMotion?.AnimatePresence || (({ children }) => <>{children}</>);
+
+        // --- Constants ---
+        const LOGO_URL = "https://i.ibb.co/LdJySH38/956a318f-590e-48f6-a6ea-098fea818a4f-Picsart-Background-Remover.png";
+
+        const NAV_ITEMS = [
+            { label: 'Home', href: '/' },
+            { label: 'Services', href: '#services' },
+            { label: 'Contact', href: '#contact' },
+        ];
+                const SERVICES = [
+            {
+                title: "Hole & Dent Patching",
+                description: "We fix everything from doorknob holes to huge wall damage, leaving a perfectly smooth and paintable surface.",
+                icon: "Hammer",
+                image: "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                title: "Water Damage Repair",
+                description: "Florida humidity can ruin ceilings and walls. We cut out rotted/stained drywall and seamlessly install new panels.",
+                icon: "Droplet",
+                image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                title: "Texture Matching",
+                description: "Orange peel, knock-down, or smooth—our experts can match any existing wall texture perfectly so the patch disappears.",
+                icon: "PenTool",
+                image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                title: "Popcorn Removal",
+                description: "Modernize your home by safely removing outdated popcorn ceilings and refinishing them with a clean, smooth skim coat.",
+                icon: "Wrench",
+                image: "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                title: "Plaster Repair",
+                description: "Specialized repair techniques for historic homes and older plaster walls that are cracking or peeling.",
+                icon: "Box",
+                image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"
+            }
+        ];
+
+        // --- Helper Components ---
+        const Icon = ({ name, className }) => {
+            useEffect(() => {
+                if (window.lucide) {
+                    window.lucide.createIcons();
+                }
+            }, [name]);
+            return <i data-lucide={name.toLowerCase()} className={className}></i>;
+        };
+
+        const Navbar = () => {
+            const [isOpen, setIsOpen] = useState(false);
+            const [scrolled, setScrolled] = useState(false);
+
+            useEffect(() => {
+                const handleScroll = () => setScrolled(window.scrollY > 50);
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            useEffect(() => {
+                if (isOpen) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = 'unset';
+                }
+            }, [isOpen]);
+
+            const scrollToContact = (e) => {
+                e.preventDefault();
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                    setIsOpen(false);
+                }
+            };
+
+            const menuVariants = {
+                closed: {
+                    y: "-100%",
+                    transition: {
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30,
+                        staggerChildren: 0.05,
+                        staggerDirection: -1
+                    }
+                },
+                open: {
+                    y: 0,
+                    transition: {
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30,
+                        staggerChildren: 0.1,
+                        delayChildren: 0.2
+                    }
+                }
+            };
+
+            const itemVariants = {
+                closed: { opacity: 0, y: 20 },
+                open: { opacity: 1, y: 0 }
+            };
+
+            return (
+                <>
+                    <nav className={`fixed top-0 left-0 w-full transition-all duration-500 ${isOpen ? 'z-[110] bg-transparent' : 'z-50 ' + (scrolled ? 'bg-brand-paper/95 backdrop-blur-xl py-3 sm:py-4 border-b border-brand-dark/10' : 'bg-transparent py-6 sm:py-8')}`}>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+                        <a href="/pembroke-pines-shores-painting/" className="flex items-center gap-3">
+                            <img src={LOGO_URL} alt="Logo" className="h-10 sm:h-16 w-auto object-contain" />
+                        </a>
+
+                        <div className="hidden lg:flex items-center gap-8">
+                            {NAV_ITEMS.map((item, idx) => (
+                                <motion.a 
+                                    key={item.label} 
+                                    href={item.href}
+                                    initial={{ opacity: 0, y: -20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: idx * 0.1, type: "spring", stiffness: 300 }}
+                                    whileHover={{ scale: 1.1, y: -2, color: '#F27D26' }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="text-sm font-medium text-brand-dark hover:text-brand-orange transition-colors"
+                                >
+                                    {item.label}
+                                </motion.a>
+                            ))}
+                        </div>
+
+                        <div className="hidden lg:block">
+                            <motion.button 
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.4, type: "spring", bounce: 0.5 }}
+                                whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(242, 125, 38, 0.4)", rotate: [0, -2, 2, -2, 0] }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={scrollToContact}
+                                className="bg-brand-orange hover:bg-brand-yellow text-brand-dark font-bold px-8 py-3 rounded-full transition-all shadow-lg shadow-brand-orange/20"
+                            >
+                                GET A QUOTE
+                            </motion.button>
+                        </div>
+
+                        <button className="lg:hidden text-brand-dark p-2 z-[120] relative" onClick={() => setIsOpen(!isOpen)}>
+                            {isOpen ? <Icon name="X" className="w-8 h-8" /> : <Icon name="Menu" className="w-8 h-8" />}
+                        </button>
+                    </div>
+                </nav>
+
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div 
+                            variants={menuVariants}
+                            initial="closed"
+                            animate="open"
+                            exit="closed"
+                            className="fixed inset-0 bg-brand-light z-[100] lg:hidden flex flex-col pt-32 pb-12 px-8 sm:px-12"
+                            style={{ backgroundColor: '#F9F8F6', opacity: 1 }}
+                        >
+                                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-40">
+                                    <div className="absolute top-[-10%] right-[-10%] w-[80%] h-[80%] bg-brand-orange/20 blur-[150px] rounded-full" />
+                                    <div className="absolute bottom-[-10%] left-[-10%] w-[70%] h-[70%] bg-brand-blue/20 blur-[150px] rounded-full" />
+                                </div>
+
+                                <div className="flex flex-col gap-6 relative z-10">
+                                    {NAV_ITEMS.map((item, idx) => (
+                                        <motion.a 
+                                            key={item.label} 
+                                            variants={itemVariants}
+                                            href={item.href} 
+                                            onClick={() => setIsOpen(false)} 
+                                            className="text-5xl sm:text-7xl font-black text-brand-dark hover:text-brand-orange transition-colors tracking-tighter leading-none"
+                                        >
+                                            <span className="text-brand-orange/60 mr-4 text-2xl sm:text-3xl font-mono">0{idx + 1}</span>
+                                            {item.label}
+                                        </motion.a>
+                                    ))}
+                                </div>
+
+                                <motion.div variants={itemVariants} className="mt-12 relative z-10">
+                                    <button 
+                                        onClick={scrollToContact}
+                                        className="w-full bg-brand-orange text-brand-dark font-bold py-6 rounded-3xl text-2xl shadow-2xl shadow-brand-orange/30 active:scale-95 transition-transform"
+                                    >
+                                        GET A QUOTE
+                                    </button>
+                                </motion.div>
+
+                                <motion.div variants={itemVariants} className="mt-auto flex flex-col gap-8 relative z-10">
+                                    <div className="h-px w-full bg-brand-dark/10" />
+                                    <div className="flex justify-between items-end">
+                                        <div className="space-y-2">
+                                            <p className="text-xs font-bold text-brand-dark/60 uppercase tracking-widest">Connect with us</p>
+                                            <div className="flex gap-6">
+                                                <a href="https://www.instagram.com/paintingfloridapros/" target="_blank" rel="noopener noreferrer" className="text-brand-dark hover:text-brand-orange transition-colors">
+                                                    <Icon name="Instagram" className="w-8 h-8" />
+                                                </a>
+                                                <a href="https://x.com/paintingflpros" target="_blank" rel="noopener noreferrer" className="text-brand-dark hover:text-brand-orange transition-colors">
+                                                    <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                                                </a>
+                                                <a href="https://www.pinterest.com/paintingflorida/_profile/" target="_blank" rel="noopener noreferrer" className="text-brand-dark hover:text-brand-orange transition-colors">
+                                                    <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.261 7.929-7.261 4.162 0 7.398 2.967 7.398 6.93 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592 0 12.017 0z"/></svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <img src={LOGO_URL} alt="Logo" className="h-20 w-auto opacity-100" />
+                                    </div>
+                                </motion.div>
+                            </motion.div>
+                        )}
+                </AnimatePresence>
+                </>
+            );
+        };
+
+        const Hero = () => {
+            const scrollToContact = () => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+
+            return (
+                <section className="relative min-h-screen flex items-center pt-24 pb-12 sm:pt-20 overflow-hidden bg-brand-light">
+                    {/* Background Video with Overlay */}
+                    <div className="absolute inset-0 z-0">
+                        <video 
+                            autoPlay 
+                            loop 
+                            muted 
+                            playsInline
+                            className="w-full h-full object-cover opacity-80"
+                        >
+                            <source src="https://cdn.prod.website-files.com/67d8fc8a03d9428ec0b29c6f%2F67eb0fa936122199232474d0_Coastal-Painting-Header-Small-transcode.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <div className="absolute inset-0 bg-gradient-to-b from-brand-light/10 via-brand-light/30 to-brand-light/90" />
+                    </div>
+
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center relative z-10">
+                        <motion.div 
+                            initial={{ opacity: 0, y: 30 }} 
+                            animate={{ opacity: 1, y: 0 }} 
+                            transition={{ duration: 0.8 }}
+                            className="max-w-4xl"
+                        >
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs sm:text-sm font-bold mb-6 sm:mb-8">
+                                <Icon name="Star" className="w-4 h-4 text-brand-orange fill-brand-orange" />
+                                PEMBROKE PINES SHORES'S #1 RATED PAINTING CONTRACTORS
+                            </div>
+
+                    <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-brand-dark tracking-tighter leading-[1] sm:leading-[0.9] mb-6 sm:mb-8 drop-shadow-sm">
+                                SEAMLESS <br />
+                                <span className="text-gradient">
+                                    DRYWALL REPAIR
+                                </span> <br />
+                                IN PEMBROKE PINES SHORES FLORIDA.
+                            </h1>
+                            <p className="text-lg sm:text-xl text-brand-dark/80 max-w-2xl mx-auto mb-12 leading-relaxed">
+                                We leverage decades of Florida expertise to deliver flawless finishes tailored specifically for the unique Pembroke Pines Shores climate, ensuring long-lasting protection.
+                            </p>
+                        </motion.div>
+
+                        <motion.div 
+                            initial={{ opacity: 0, y: 50, rotateX: 20 }} 
+                            animate={{ opacity: 1, y: 0, rotateX: 0 }} 
+                            transition={{ duration: 1, delay: 0.4, type: "spring", bounce: 0.4 }} 
+                            className="relative w-full max-w-md mb-12"
+                            style={{ perspective: 1000 }}
+                        >
+                            <motion.div 
+                                animate={{ y: [0, -15, 0] }}
+                                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                                className="bg-brand-paper/80 backdrop-blur-md p-6 sm:p-8 rounded-[32px] shadow-2xl border border-brand-dark/5 relative z-10"
+                            >
+                                <h3 className="text-xl font-black mb-1 text-brand-dark">FREE ESTIMATE</h3>
+                                <p className="text-brand-dark/60 text-[10px] mb-6 uppercase tracking-widest font-bold">Let us contact you</p>
+                                
+                                <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
+                                    <motion.div whileFocus={{ scale: 1.02 }} whileHover={{ scale: 1.01 }}>
+                                        <input type="text" placeholder="Your Name" className="w-full px-5 py-3 rounded-xl bg-brand-dark/5 border border-brand-dark/10 focus:border-brand-orange outline-none transition-all text-brand-dark text-sm" />
+                                    </motion.div>
+                                    <motion.div whileFocus={{ scale: 1.02 }} whileHover={{ scale: 1.01 }}>
+                                        <input type="tel" placeholder="Phone Number" className="w-full px-5 py-3 rounded-xl bg-brand-dark/5 border border-brand-dark/10 focus:border-brand-orange outline-none transition-all text-brand-dark text-sm" />
+                                    </motion.div>
+                                    <motion.div whileFocus={{ scale: 1.02 }} whileHover={{ scale: 1.01 }}>
+                                        <select className="w-full px-5 py-3 rounded-xl bg-brand-dark/5 border border-brand-dark/10 focus:border-brand-orange outline-none transition-all text-brand-dark appearance-none text-sm cursor-pointer">
+                                            <option>Residential Painting</option>
+                                            <option>Commercial Painting</option>
+                                            <option>Cabinet Refinishing</option>
+                                            <option>Other Service</option>
+                                        </select>
+                                    </motion.div>
+                                    <motion.button 
+                                        whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(242, 125, 38, 0.4)" }}
+                                        whileTap={{ scale: 0.95 }}
+                                        className="w-full bg-brand-orange text-brand-dark font-black py-3 rounded-xl shadow-lg shadow-brand-orange/20 transition-all text-sm mt-2"
+                                    >
+                                        SEND REQUEST
+                                    </motion.button>
+                                </form>
+                                
+                                <p className="mt-4 text-[9px] text-brand-dark/40 text-center uppercase tracking-widest font-bold">
+                                    Fast response guaranteed
+                                </p>
+                            </motion.div>
+                            
+                            {/* Decorative element */}
+                            <motion.div 
+                                animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }} 
+                                transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+                                className="absolute -bottom-4 -right-4 w-32 h-32 bg-brand-orange/30 blur-3xl rounded-full z-0" 
+                            />
+                            <motion.div 
+                                animate={{ scale: [1, 1.3, 1], rotate: [0, -90, 0] }} 
+                                transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+                                className="absolute -top-4 -left-4 w-32 h-32 bg-brand-blue/30 blur-3xl rounded-full z-0" 
+                            />
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                        >
+                            {/* Socials & Phone */}
+                            <div className="flex flex-wrap items-center justify-center gap-6">
+                                <motion.a whileHover={{ scale: 1.1, y: -2 }} whileTap={{ scale: 0.95 }} href="tel:9544664652" className="flex items-center gap-2 text-brand-dark font-black hover:text-brand-orange transition-colors group">
+                                    <motion.div animate={{ rotate: [0, -10, 10, -10, 10, 0], scale: [1, 1.1, 1] }} transition={{ repeat: Infinity, duration: 2, repeatDelay: 3 }} className="w-10 h-10 rounded-full bg-brand-orange/10 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-brand-paper transition-all">
+                                        <Icon name="Phone" className="w-5 h-5" />
+                                    </motion.div>
+                                    954-466-4652
+                                </motion.a>
+                                <div className="h-8 w-px bg-brand-dark/10 hidden sm:block" />
+                                <div className="flex gap-4">
+                                    <motion.a whileHover={{ scale: 1.2, rotate: 15 }} whileTap={{ scale: 0.9 }} href="https://www.instagram.com/paintingfloridapros/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-dark/5 flex items-center justify-center text-brand-dark hover:bg-brand-orange hover:text-brand-paper transition-all">
+                                        <Icon name="Instagram" className="w-5 h-5" />
+                                    </motion.a>
+                                    <motion.a whileHover={{ scale: 1.2, rotate: -15 }} whileTap={{ scale: 0.9 }} href="https://x.com/paintingflpros" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-dark/5 flex items-center justify-center text-brand-dark hover:bg-brand-orange hover:text-brand-paper transition-all">
+                                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                                    </motion.a>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+            );
+        };
+
+        const ServicesSection = () => {
+            const [index, setIndex] = useState(0);
+            const containerRef = useRef(null);
+
+            const next = () => setIndex((prev) => (prev + 1) % SERVICES.length);
+            const prev = () => setIndex((prev) => (prev - 1 + SERVICES.length) % SERVICES.length);
+
+            return (
+                <section id="services" className="py-24 sm:py-40 relative overflow-hidden bg-brand-light text-brand-dark">
+                    {/* Background Decorative Elements */}
+                    <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
+                        <motion.div 
+                            animate={{ x: [0, 100, 0], y: [0, 50, 0], scale: [1, 1.2, 1] }} 
+                            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+                            className="absolute top-[10%] left-[-5%] w-[40%] h-[40%] bg-brand-orange blur-[150px] rounded-full" 
+                        />
+                        <motion.div 
+                            animate={{ x: [0, -100, 0], y: [0, -50, 0], scale: [1, 1.5, 1] }} 
+                            transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+                            className="absolute bottom-[10%] right-[-5%] w-[40%] h-[40%] bg-brand-blue blur-[150px] rounded-full" 
+                        />
+                    </div>
+
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                        <div className="flex flex-col items-center text-center mb-16 sm:mb-24">
+                            <motion.span 
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                className="text-brand-orange font-black tracking-[0.3em] text-xs sm:text-sm uppercase mb-4 block"
+                            >
+                                PEMBROKE PINES SHORES'S EXPERTISE
+                            </motion.span>
+                            <motion.h2 
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                className="text-5xl sm:text-7xl lg:text-9xl font-black tracking-tighter leading-[0.85] mb-8"
+                            >
+                                MASTERING <br />
+                                <span className="text-gradient">THE ART</span> <br />
+                                OF COLOR.
+                            </motion.h2>
+                        </div>
+
+                        {/* Desktop Grid (Bento Style) */}
+                        <div className="hidden lg:grid grid-cols-12 gap-6 auto-rows-[300px]">
+                            {SERVICES.map((service, idx) => (
+                                <motion.div
+                                    key={service.title}
+                                    initial={{ opacity: 0, scale: 0.8, y: 50 }}
+                                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    whileHover={{ scale: 1.02, rotate: idx % 2 === 0 ? 1 : -1 }}
+                                    transition={{ delay: idx * 0.1, type: "spring", stiffness: 200, damping: 20 }}
+                                    className={`relative group rounded-[40px] overflow-hidden border border-brand-dark/5 shadow-sm hover:shadow-2xl transition-all duration-500 ${
+                                        idx === 0 ? 'col-span-8 row-span-2' : 
+                                        idx === 1 ? 'col-span-4 row-span-1' :
+                                        idx === 2 ? 'col-span-4 row-span-2' :
+                                        idx === 3 ? 'col-span-4 row-span-1' :
+                                        idx === 4 ? 'col-span-4 row-span-1' :
+                                        'col-span-4 row-span-1'
+                                    }`}
+                                >
+                                    {service.image.endsWith('.mp4') ? (
+                                        <video src={service.image} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90" />
+                                    ) : (
+                                        <img src={service.image} alt={service.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90" referrerPolicy="no-referrer" />
+                                    )}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-brand-paper via-brand-paper/20 to-transparent opacity-90" />
+                                    
+                                    <div className="absolute inset-0 p-10 flex flex-col justify-end">
+                                        <motion.div 
+                                            animate={{ y: [0, -5, 0] }}
+                                            transition={{ repeat: Infinity, duration: 2 + (idx * 0.5), ease: "easeInOut" }}
+                                            className="w-14 h-14 bg-brand-orange/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-brand-orange mb-6 group-hover:bg-brand-orange group-hover:text-brand-paper group-hover:scale-110 group-hover:rotate-12 transition-all duration-500"
+                                        >
+                                            <Icon name={service.icon} className="w-7 h-7" />
+                                        </motion.div>
+                                        <h3 className="text-3xl font-black mb-4 tracking-tight text-brand-dark transform group-hover:-translate-y-2 transition-transform duration-500">{service.title}</h3>
+                                        <p className="text-brand-dark/60 text-sm max-w-xs mb-8 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:-translate-y-2 transition-all duration-500">
+                                            {service.description}
+                                        </p>
+                                        <a href={`/${service.title.toLowerCase().replace(' painting', '').replace(' ', '-').replace('property', 'painting')}-painting.html`.replace('-painting-painting', '-painting').replace('cabinet-refinishing-painting', 'cabinet-refinishing')} className="inline-flex items-center gap-3 text-brand-orange font-black text-xs uppercase tracking-widest group/btn">
+                                            LEARN MORE 
+                                            <div className="w-8 h-8 rounded-full border border-brand-orange/30 flex items-center justify-center group-hover/btn:bg-brand-orange group-hover/btn:text-brand-paper group-hover/btn:scale-125 transition-all">
+                                                <Icon name="ArrowRight" className="w-4 h-4" />
+                                            </div>
+                                        </a>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        {/* Mobile Infinite Slider */}
+                        <div className="lg:hidden relative">
+                            <div className="overflow-hidden">
+                                <motion.div 
+                                    className="flex"
+                                    animate={{ x: `-${index * 100}%` }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                >
+                                    {SERVICES.map((service) => (
+                                        <div key={service.title} className="min-w-full px-2">
+                                            <motion.div 
+                                                whileTap={{ scale: 0.98 }}
+                                                className="relative h-[500px] rounded-[40px] overflow-hidden border border-brand-dark/5 bg-brand-paper shadow-xl group"
+                                            >
+                                                {service.image.endsWith('.mp4') ? (
+                                                    <video src={service.image} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000" />
+                                                ) : (
+                                                    <img src={service.image} alt={service.title} className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000" referrerPolicy="no-referrer" />
+                                                )}
+                                                <div className="absolute inset-0 bg-gradient-to-t from-brand-paper via-brand-paper/40 to-transparent" />
+                                                
+                                                <div className="absolute inset-0 p-8 flex flex-col justify-end items-center text-center">
+                                                    <motion.div 
+                                                        animate={{ y: [0, -5, 0] }}
+                                                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                                                        className="w-16 h-16 bg-brand-orange/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-brand-orange mb-6 group-hover:bg-brand-orange group-hover:text-brand-paper transition-colors duration-500"
+                                                    >
+                                                        <Icon name={service.icon} className="w-8 h-8" />
+                                                    </motion.div>
+                                                    <h3 className="text-3xl font-black mb-4 tracking-tight text-brand-dark">{service.title}</h3>
+                                                    <p className="text-brand-dark/70 text-sm mb-8 leading-relaxed">
+                                                        {service.description}
+                                                    </p>
+                                                    <motion.a 
+                                                        href={`/${service.title.toLowerCase().replace(' painting', '').replace(' ', '-').replace('property', 'painting')}-painting.html`.replace('-painting-painting', '-painting').replace('cabinet-refinishing-painting', 'cabinet-refinishing')}
+                                                        whileHover={{ scale: 1.05 }}
+                                                        whileTap={{ scale: 0.95 }}
+                                                        className="bg-brand-orange text-brand-dark font-black px-8 py-4 rounded-2xl text-sm uppercase tracking-widest flex items-center gap-3 shadow-xl shadow-brand-orange/20 inline-flex"
+                                                    >
+                                                        LEARN MORE
+                                                        <motion.div animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
+                                                            <Icon name="ArrowRight" className="w-4 h-4" />
+                                                        </motion.div>
+                                                    </motion.a>
+                                                </div>
+                                            </motion.div>
+                                        </div>
+                                    ))}
+                                </motion.div>
+                            </div>
+                            
+                            {/* Slider Controls */}
+                            <div className="flex justify-center gap-4 mt-8">
+                                <motion.button whileHover={{ scale: 1.1, x: -2 }} whileTap={{ scale: 0.9 }} onClick={prev} className="w-12 h-12 rounded-full border border-brand-dark/10 flex items-center justify-center text-brand-dark active:bg-brand-orange active:border-brand-orange active:text-brand-paper transition-all">
+                                    <Icon name="ChevronLeft" className="w-6 h-6" />
+                                </motion.button>
+                                <div className="flex items-center gap-2">
+                                    {SERVICES.map((_, i) => (
+                                        <motion.div 
+                                            key={i} 
+                                            animate={{ width: i === index ? 32 : 8, backgroundColor: i === index ? '#F27D26' : 'rgba(0,0,0,0.1)' }}
+                                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                            className="h-1.5 rounded-full" 
+                                        />
+                                    ))}
+                                </div>
+                                <motion.button whileHover={{ scale: 1.1, x: 2 }} whileTap={{ scale: 0.9 }} onClick={next} className="w-12 h-12 rounded-full border border-brand-dark/10 flex items-center justify-center text-brand-dark active:bg-brand-orange active:border-brand-orange active:text-brand-paper transition-all">
+                                    <Icon name="ChevronRight" className="w-6 h-6" />
+                                </motion.button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        const FAQSection = () => {
+            const [openIndex, setOpenIndex] = React.useState(null);
+
+            const faqs = [
+                {
+                    question: "How much does painting a house cost in Pembroke Pines Shores?",
+                    answer: "The cost to paint a house in Pembroke Pines Shores varies based on square footage, prep work needed for humidity damage, and the quality of paint chosen (we recommend premium, weather-resistant brands). Contact us today for a free, exact quote tailored to your property."
+                },
+                {
+                    question: "Do you offer commercial painting services in Miami-Dade?",
+                    answer: "Yes! We specialize in commercial and industrial painting across Miami-Dade county. We work around your business hours to minimize disruption, using low-VOC paints and durable commercial coatings perfect for retail spaces and offices."
+                },
+                {
+                    question: "How do you prep for Pembroke Pines Shores's harsh weather and humidity?",
+                    answer: "Pembroke Pines Shores's climate demands rigorous prep. We power wash, scrape blistering paint, repair stucco cracks, and apply high-quality, moisture-resistant primers before painting. This seals out the salt air and prevents future peeling."
+                },
+                {
+                    question: "Are your painting contractors licensed and insured in Florida?",
+                    answer: "Absolutely. Painting Florida Pros is fully licensed, bonded, and insured. We guarantee professional, safe, and code-compliant work on every residential and commercial project."
+                }
+            ];
+
+            return (
+                <section id="faq" className="py-20 sm:py-32 bg-brand-light border-y border-brand-dark/5 relative overflow-hidden">
+                    <div className="absolute -left-32 top-1/4 w-96 h-96 bg-brand-orange/5 blur-[100px] rounded-full pointer-events-none" />
+                    
+                    <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+                        <motion.div 
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="text-center mb-16"
+                        >
+                            <h2 className="text-4xl sm:text-6xl font-black tracking-tighter mb-6 text-brand-dark">
+                                FREQUENTLY ASKED <span className="text-brand-orange">QUESTIONS</span>
+                            </h2>
+                            <p className="text-brand-dark/70 text-lg">Top answers for Pembroke Pines Shores property owners.</p>
+                        </motion.div>
+
+                        <div className="space-y-4">
+                            {faqs.map((faq, index) => (
+                                <motion.div 
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                                    className="bg-white rounded-3xl border border-brand-dark/5 shadow-sm overflow-hidden"
+                                >
+                                    <button 
+                                        onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                        className="w-full px-6 py-6 sm:px-8 sm:py-8 flex justify-between items-center text-left bg-transparent border-none cursor-pointer focus:outline-none"
+                                    >
+                                        <h3 className="font-bold text-lg sm:text-xl text-brand-dark pr-4">{faq.question}</h3>
+                                        <motion.div 
+                                            animate={{ rotate: openIndex === index ? 180 : 0 }}
+                                            transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                                            className="w-10 h-10 rounded-full bg-brand-dark/5 flex items-center justify-center text-brand-dark shrink-0"
+                                        >
+                                            <Icon name="ChevronDown" className="w-5 h-5" />
+                                        </motion.div>
+                                    </button>
+                                    
+                                    <motion.div 
+                                        initial={false}
+                                        animate={{ 
+                                            height: openIndex === index ? "auto" : 0,
+                                            opacity: openIndex === index ? 1 : 0
+                                        }}
+                                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                                        className="overflow-hidden bg-brand-dark/5"
+                                    >
+                                        <div className="px-6 pb-6 sm:px-8 sm:pb-8 pt-2">
+                                            <p className="text-brand-dark/80 leading-relaxed">
+                                                {faq.answer}
+                                            </p>
+                                        </div>
+                                    </motion.div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        const ContactSection = () => {
+            return (
+                <section id="contact" className="py-20 sm:py-32 relative overflow-hidden">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-orange/5 blur-[150px] rounded-full pointer-events-none" />
+                    
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 sm:gap-20 items-center">
+                        <motion.div 
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, type: "spring" }}
+                            className="text-center lg:text-left"
+                        >
+                            <h2 className="text-4xl sm:text-6xl lg:text-8xl font-black tracking-tighter mb-6 sm:mb-8 leading-[1] sm:leading-[0.9] text-brand-dark">
+                                READY FOR A <br /> 
+                                <motion.span 
+                                    animate={{ color: ['#F27D26', '#FFD700', '#F27D26'] }}
+                                    transition={{ repeat: Infinity, duration: 4 }}
+                                    className="text-brand-orange inline-block"
+                                >
+                                    FRESH START?
+                                </motion.span>
+                            </h2>
+                            <p className="text-lg sm:text-xl text-brand-dark/80 mb-8 sm:mb-12">
+                                Get a free, no-obligation quote today.
+                            </p>
+                            
+                            <div className="space-y-4 sm:space-y-6 max-w-md mx-auto lg:mx-0">
+                                <motion.div whileHover={{ scale: 1.05, x: 10 }} className="flex items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-brand-dark/5 rounded-2xl sm:rounded-3xl border border-brand-dark/10 text-left cursor-pointer">
+                                    <motion.div animate={{ rotate: [0, -10, 10, -10, 10, 0] }} transition={{ repeat: Infinity, duration: 2, repeatDelay: 2 }} className="w-12 h-12 sm:w-14 h-14 bg-brand-blue/10 rounded-xl sm:rounded-2xl flex items-center justify-center text-brand-blue shrink-0">
+                                        <Icon name="Phone" className="w-5 h-5 sm:w-6 h-6" />
+                                    </motion.div>
+                                    <div>
+                                        <p className="text-[10px] sm:text-xs text-brand-dark/60 font-bold uppercase tracking-wider">CALL US ANYTIME</p>
+                                        <p className="text-lg sm:text-xl font-bold text-brand-dark">954-466-4652</p>
+                                    </div>
+                                </motion.div>
+                                <motion.div whileHover={{ scale: 1.05, x: 10 }} className="flex items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-brand-dark/5 rounded-2xl sm:rounded-3xl border border-brand-dark/10 text-left cursor-pointer">
+                                    <motion.div animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 2 }} className="w-12 h-12 sm:w-14 h-14 bg-brand-green/10 rounded-xl sm:rounded-2xl flex items-center justify-center text-brand-green shrink-0">
+                                        <Icon name="Mail" className="w-5 h-5 sm:w-6 h-6" />
+                                    </motion.div>
+                                    <div className="overflow-hidden">
+                                        <p className="text-[10px] sm:text-xs text-brand-dark/60 font-bold uppercase tracking-wider">EMAIL OUR TEAM</p>
+                                        <p className="text-base sm:text-xl font-bold truncate text-brand-dark">paintingfloridapros@gmail.com</p>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div 
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, type: "spring", delay: 0.2 }}
+                            whileHover={{ boxShadow: "0 25px 50px -12px rgba(242, 125, 38, 0.25)" }}
+                            className="bg-white p-2 sm:p-4 lg:p-8 rounded-[32px] sm:rounded-[48px] text-brand-dark shadow-2xl relative min-h-[600px] sm:min-h-[877px] overflow-hidden group"
+                        >
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-orange/10 blur-3xl rounded-full group-hover:scale-150 transition-transform duration-1000"></div>
+                            <div className="absolute bottom-0 left-0 w-32 h-32 bg-brand-blue/10 blur-3xl rounded-full group-hover:scale-150 transition-transform duration-1000"></div>
+                            <iframe
+                                src="https://api.leadconnectorhq.com/widget/form/sT672aeDSZUEpqRGB9Dg"
+                                style={{ width: '100%', height: '877px', border: 'none', position: 'relative', zIndex: 10 }}
+                                title="Contact Form"
+                                className="w-full"
+                            />
+                        </motion.div>
+                    </div>
+                </section>
+            );
+        };
+
+        const Footer = () => {
+            return (
+                <footer className="py-16 sm:py-24 border-t border-brand-dark/10 bg-brand-light relative overflow-hidden">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                        <div className="grid sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 mb-16 sm:mb-24">
+                            <motion.div 
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                                className="text-center sm:text-left"
+                            >
+                                <motion.img whileHover={{ scale: 1.05, rotate: -2 }} src={LOGO_URL} alt="Logo" className="h-16 sm:h-20 w-auto object-contain mb-8 sm:mb-10 mx-auto sm:mx-0 cursor-pointer" />
+                                <h3 className="text-lg font-bold mb-4 text-brand-orange uppercase tracking-widest">Pembroke Pines Shores's Elite Painters</h3>
+                                <p className="text-brand-dark/70 mb-8 leading-relaxed text-sm">
+                                    Painting Florida Pros provides premium residential and commercial painting services across Miami-Dade County. 
+                                    Our licensed contractors specialize in high-end interior and exterior finishes, 
+                                    cabinet refinishing, and industrial coatings that resist the Pembroke Pines Shores climate.
+                                </p>
+                                <div className="flex gap-4 justify-center sm:justify-start">
+                                    <motion.a whileHover={{ scale: 1.2, rotate: 15 }} whileTap={{ scale: 0.9 }} href="https://www.instagram.com/paintingfloridapros/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-dark/5 flex items-center justify-center text-brand-dark hover:bg-brand-orange hover:text-brand-paper transition-colors">
+                                        <Icon name="Instagram" className="w-5 h-5" />
+                                    </motion.a>
+                                    <motion.a whileHover={{ scale: 1.2, rotate: -15 }} whileTap={{ scale: 0.9 }} href="https://x.com/paintingflpros" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-dark/5 flex items-center justify-center text-brand-dark hover:bg-brand-orange hover:text-brand-paper transition-colors">
+                                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                                    </motion.a>
+                                    <motion.a whileHover={{ scale: 1.2, rotate: 15 }} whileTap={{ scale: 0.9 }} href="https://www.pinterest.com/paintingflorida/_profile/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-dark/5 flex items-center justify-center text-brand-dark hover:bg-brand-orange hover:text-brand-paper transition-colors">
+                                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.261 7.929-7.261 4.162 0 7.398 2.967 7.398 6.93 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592 0 12.017 0z"/></svg>
+                                    </motion.a>
+                                </div>
+                            </motion.div>
+
+                            <motion.div 
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                className="text-center sm:text-left"
+                            >
+                                <div className="flex flex-col items-center sm:items-start text-center sm:text-left h-full">
+                                    <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-brand-dark">SERVICE DIRECTORY</h4>
+                                    <p className="text-brand-dark/70 text-xs mb-6 leading-relaxed max-w-xs">
+                                        We aggressively serve all of Miami-Dade, Broward, and Palm Beach counties. We have established dedicated local service hubs in over 1,000 South Florida neighborhoods.
+                                    </p>
+                                    <a href="/areas-we-serve/" className="inline-flex items-center justify-center gap-3 bg-brand-dark text-brand-paper px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-300 group mt-auto">
+                                        View All 1,000+ Areas
+                                        <div className="w-6 h-6 rounded-full bg-brand-paper/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                            <i data-lucide="arrow-right" className="w-3 h-3 text-brand-paper"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </motion.div>
+
+                            <div className="text-center sm:text-left">
+                                <h4 className="font-bold mb-8 text-sm uppercase tracking-widest text-brand-dark">OUR SERVICE AREA</h4>
+                                <motion.div 
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.8, delay: 0.6 }}
+                                    className="rounded-3xl overflow-hidden h-48 bg-brand-dark/5 border border-brand-dark/10 transition-all duration-700 shadow-2xl group"
+                                >
+                                    <iframe 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114964.38942548057!2d-80.31185984242686!3d25.782545311020084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C%20FL!5e0!3m2!1sen!2sus!4v1710363574932!5m2!1sen!2sus" 
+                                        width="100%" 
+                                        height="100%" 
+                                        style={{ border: 0 }} 
+                                        allowFullScreen="" 
+                                        loading="lazy" 
+                                        referrerPolicy="no-referrer-when-downgrade"
+                                        className="group-hover:scale-110 transition-transform duration-700"
+                                    ></iframe>
+                                </motion.div>
+                                <p className="mt-4 text-[10px] text-brand-dark/50 uppercase tracking-widest font-bold">Serving Pembroke Pines Shores, Orlando, Tampa, Jacksonville & More</p>
+                            </div>
+                        </div>
+                        
+                        <div className="pt-10 sm:pt-16 border-t border-brand-dark/5 flex flex-col lg:flex-row justify-between items-center gap-8 text-brand-dark/40 text-[10px] sm:text-xs font-bold text-center">
+                            <div className="flex flex-wrap justify-center gap-6 sm:gap-10">
+                                <p>© 2024 PAINTING FLORIDA PROS. ALL RIGHTS RESERVED.</p>
+                                <p>PEMBROKE PINES SHORES'S #1 RATED PAINTING CONTRACTORS</p>
+                            </div>
+                            <div className="flex flex-wrap justify-center gap-6 sm:gap-10">
+                                <a href="#" className="hover:text-brand-orange transition-colors">PRIVACY POLICY</a>
+                                <a href="#" className="hover:text-brand-dark/60 transition-colors">TERMS & CONDITIONS</a>
+                                <a href="#" className="hover:text-brand-dark/60 transition-colors">COOKIE SETTINGS</a>
+                                <a href="#" className="hover:text-brand-dark/60 transition-colors">ACCESSIBILITY</a>
+                            </div>
+                        </div>
+
+                        <div className="mt-12 pt-8 border-t border-brand-dark/5 flex justify-center items-center gap-3 text-brand-dark/40 text-[10px] sm:text-xs font-bold">
+                            <span className="text-brand-dark/10">|</span>
+                            <div className="flex items-center gap-1.5">
+                                <span>Made by</span>
+                                <a href="https://truewebx.site/" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:text-brand-yellow transition-colors flex items-center gap-1">
+                                    TrueWebX
+                                    <Icon name="ExternalLink" className="w-3 h-3" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            );
+        };
+
+        function App() {
+            return (
+                <div className="min-h-screen bg-brand-light text-brand-dark selection:bg-brand-orange selection:text-brand-paper">
+                    <Navbar />
+                    <main>
+                        <Hero />
+                        <ServicesSection />
+                        <FAQSection />
+                        <ContactSection />
+                    </main>
+                    <Footer />
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
