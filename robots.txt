@@ -18,4 +18,4 @@ User-agent: omgilibot
 Disallow: /
 
 # Point directly to the sitemap to ensure instant Google/Bing discovery
-Sitemap: https://paintingfloridapros.com/sitemap.xml
+Sitemap: https://www.paintingfloridapros.com/sitemap.xml

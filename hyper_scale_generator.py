@@ -84,7 +84,7 @@ def build_hyper_scale():
                                   f'content="Top-rated residential and commercial painting contractors in {city_name} FL. Specializing in high-end interior, exterior, and protective coatings against humidity."')
         content = content.replace('"name": "Painting Florida Pros - Miami Headquarters",', f'"name": "Painting Florida Pros - {city_name} Branch",')
         content = content.replace('"addressLocality": "Miami",', f'"addressLocality": "{city_name}",')
-        content = content.replace('"url": "https://paintingfloridapros.com",', f'"url": "https://paintingfloridapros.com/{folder_name}/",')
+        content = content.replace('"url": "https://www.paintingfloridapros.com",', f'"url": "https://www.paintingfloridapros.com/{folder_name}/",')
         
         content = content.replace("MIAMI'S ELITE PAINTING CONTRACTORS", f"{city_name.upper()}'S ELITE PAINTING CONTRACTORS")
         content = content.replace("Florida's Premier<br />", "PREMIER<br />")

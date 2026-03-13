@@ -101,7 +101,7 @@ def build_silos():
         content = content.replace('"name": "Painting Florida Pros - Miami",', f'"name": "Painting Florida Pros - {data["schema_locality"]}",')
         
         # Add the specific neighborhood file to the Schema URL
-        content = content.replace('"url": "https://paintingfloridapros.com",', f'"url": "https://paintingfloridapros.com/{filename}",')
+        content = content.replace('"url": "https://www.paintingfloridapros.com",', f'"url": "https://www.paintingfloridapros.com/{filename}",')
         
         # 4. Inject Localized H1 Array (The Hero Section exactly)
         old_h1 = """<h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-brand-dark tracking-tighter leading-[1] sm:leading-[0.9] mb-6 sm:mb-8 drop-shadow-sm">

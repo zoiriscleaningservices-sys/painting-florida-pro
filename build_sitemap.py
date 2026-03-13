@@ -2,7 +2,7 @@ import os
 import datetime
 
 BASE_DIR = r"c:\Users\lucia\OneDrive\Desktop\painting-florida-pro"
-DOMAIN = "https://paintingfloridapros.com"
+DOMAIN = "https://www.paintingfloridapros.com"
 
 SITEMAP_HEADER = """<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">"""

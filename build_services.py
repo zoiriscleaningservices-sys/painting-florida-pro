@@ -214,7 +214,7 @@ def build_service_pages():
         # Switch PaintingBuilder to HousePainter/ProfessionalService where appropriate
         content = content.replace('"@type": "PaintingBuilder",', f'"@type": "{data["schema_type"]}",')
         # Add the specific filename to the Schema URL
-        content = content.replace('"url": "https://paintingfloridapros.com",', f'"url": "https://paintingfloridapros.com/{filename}",')
+        content = content.replace('"url": "https://www.paintingfloridapros.com",', f'"url": "https://www.paintingfloridapros.com/{filename}",')
         
         # 4. Inject EXACT MATCH H1 Hero Text
         old_h1 = """<h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-brand-dark tracking-tighter leading-[1] sm:leading-[0.9] mb-6 sm:mb-8 drop-shadow-sm">

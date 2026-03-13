@@ -84,16 +84,16 @@ def build_insulated_silos():
                 content = content.replace(f'<meta name="description" content="{old_desc}">', f'<meta name="description" content="{new_desc}">')
                 
             # 4. Update the schema URL to point to this new exact page
-            # Global: "url": "https://paintingfloridapros.com/interior-painting/",
-            # New Local: "url": "https://paintingfloridapros.com/brickell-painting/interior-painting/",
+            # Global: "url": "https://www.paintingfloridapros.com/interior-painting/",
+            # New Local: "url": "https://www.paintingfloridapros.com/brickell-painting/interior-painting/",
             content = content.replace(
-                f'"url": "https://paintingfloridapros.com/{service}/",', 
-                f'"url": "https://paintingfloridapros.com/{hub}/{service}/",'
+                f'"url": "https://www.paintingfloridapros.com/{service}/",', 
+                f'"url": "https://www.paintingfloridapros.com/{hub}/{service}/",'
             )
             # Also catch older schema URL patterns just in case
             content = content.replace(
-                f'"url": "https://paintingfloridapros.com/{service}.html",',
-                f'"url": "https://paintingfloridapros.com/{hub}/{service}/",'
+                f'"url": "https://www.paintingfloridapros.com/{service}.html",',
+                f'"url": "https://www.paintingfloridapros.com/{hub}/{service}/",'
             )
 
             # Save the localized child page
