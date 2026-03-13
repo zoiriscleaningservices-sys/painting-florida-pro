@@ -807,20 +807,19 @@
             return (
                 <footer className="py-16 sm:py-24 border-t border-brand-dark/10 bg-brand-light relative overflow-hidden">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-                        <div className="grid sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 mb-16 sm:mb-24">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16 sm:mb-24">
+                            
+                            {/* Column 1: Brand & Bio */}
                             <motion.div 
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
-                                className="text-center sm:text-left"
                             >
-                                <motion.img whileHover={{ scale: 1.05, rotate: -2 }} src={LOGO_URL} alt="Logo" className="h-16 sm:h-20 w-auto object-contain mb-8 sm:mb-10 mx-auto sm:mx-0 cursor-pointer" />
-                                <h3 className="text-lg font-bold mb-4 text-brand-orange uppercase tracking-widest">South Aventura's Elite Painters</h3>
+                                <motion.img whileHover={{ scale: 1.05, rotate: -2 }} src={LOGO_URL} alt="Logo" className="h-16 sm:h-20 w-auto object-contain mb-8 mx-auto sm:mx-0 cursor-pointer" />
                                 <p className="text-brand-dark/70 mb-8 leading-relaxed text-sm">
-                                    Painting Florida Pros provides premium residential and commercial painting services across Miami-Dade County. 
-                                    Our licensed contractors specialize in high-end interior and exterior finishes, 
-                                    cabinet refinishing, and industrial coatings that resist the South Aventura climate.
+                                    Painting Florida Pros is South Florida's elite residential and commercial coating contractor. 
+                                    We aggressively defend your exterior against coastal elements and transform your interiors with perfect finishes.
                                 </p>
                                 <div className="flex gap-4 justify-center sm:justify-start">
                                     <motion.a whileHover={{ scale: 1.2, rotate: 15 }} whileTap={{ scale: 0.9 }} href="https://www.instagram.com/paintingfloridapros/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-dark/5 flex items-center justify-center text-brand-dark hover:bg-brand-orange hover:text-brand-paper transition-colors">
@@ -835,72 +834,124 @@
                                 </div>
                             </motion.div>
 
+                            {/* Column 2: Core Services */}
                             <motion.div 
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: 0.2 }}
-                                className="text-center sm:text-left"
                             >
-                                <div className="flex flex-col items-center sm:items-start text-center sm:text-left h-full">
-                                    <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-brand-dark">SERVICE DIRECTORY</h4>
-                                    <p className="text-brand-dark/70 text-xs mb-6 leading-relaxed max-w-xs">
-                                        We aggressively serve all of Miami-Dade, Broward, and Palm Beach counties. We have established dedicated local service hubs in over 1,000 South Florida neighborhoods.
-                                    </p>
-                                    <a href="/areas-we-serve/" className="inline-flex items-center justify-center gap-3 bg-brand-dark text-brand-paper px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-300 group mt-auto">
+                                <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-brand-dark border-b border-brand-orange/20 pb-2 inline-block">Our Services</h4>
+                                <ul className="space-y-4">
+                                    {SERVICES.map((s, i) => (
+                                        <li key={i}>
+                                            <a href="#services" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                                <Icon name="ChevronRight" className="w-3 h-3 text-brand-orange" />
+                                                {s.title}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+
+                            {/* Column 3: Dynamic Nearby Locations (Spiderweb SEO) */}
+                            <motion.div 
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: 0.4 }}
+                            >
+                                <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-brand-dark border-b border-brand-orange/20 pb-2 inline-block flex items-center gap-2">
+                                    Geographic Range
+                                </h4>
+                                <ul className="space-y-4">
+                                
+                                    <li>
+                                        <a href="/medley-key-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                            <Icon name="MapPin" className="w-3 h-3 text-brand-orange" />
+                                            Medley Key Painters
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/golden-beach-hills-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                            <Icon name="MapPin" className="w-3 h-3 text-brand-orange" />
+                                            Golden Beach Hills Painters
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/davie-park-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                            <Icon name="MapPin" className="w-3 h-3 text-brand-orange" />
+                                            Davie Park Painters
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/medley-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                            <Icon name="MapPin" className="w-3 h-3 text-brand-orange" />
+                                            Medley Painters
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/cutler-bay-bay-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                            <Icon name="MapPin" className="w-3 h-3 text-brand-orange" />
+                                            Cutler Bay Bay Painters
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div className="mt-8">
+                                    <a href="/areas-we-serve/" className="inline-flex items-center justify-center gap-2 bg-brand-dark/5 text-brand-dark px-4 py-2 rounded-lg font-bold text-[10px] uppercase tracking-widest hover:bg-brand-orange hover:text-brand-paper transition-all duration-300 group">
                                         View All 1,000+ Areas
-                                        <div className="w-6 h-6 rounded-full bg-brand-paper/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                            <i data-lucide="arrow-right" className="w-3 h-3 text-brand-paper"></i>
-                                        </div>
+                                        <Icon name="ArrowRight" className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                                     </a>
                                 </div>
                             </motion.div>
 
-                            <div className="text-center sm:text-left">
-                                <h4 className="font-bold mb-8 text-sm uppercase tracking-widest text-brand-dark">OUR SERVICE AREA</h4>
-                                <motion.div 
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.8, delay: 0.6 }}
-                                    className="rounded-3xl overflow-hidden h-48 bg-brand-dark/5 border border-brand-dark/10 transition-all duration-700 shadow-2xl group"
-                                >
-                                    <iframe 
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114964.38942548057!2d-80.31185984242686!3d25.782545311020084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C%20FL!5e0!3m2!1sen!2sus!4v1710363574932!5m2!1sen!2sus" 
-                                        width="100%" 
-                                        height="100%" 
-                                        style={{ border: 0 }} 
-                                        allowFullScreen="" 
-                                        loading="lazy" 
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                        className="group-hover:scale-110 transition-transform duration-700"
-                                    ></iframe>
-                                </motion.div>
-                                <p className="mt-4 text-[10px] text-brand-dark/50 uppercase tracking-widest font-bold">Serving South Aventura, Orlando, Tampa, Jacksonville & More</p>
-                            </div>
-                        </div>
-                        
-                        <div className="pt-10 sm:pt-16 border-t border-brand-dark/5 flex flex-col lg:flex-row justify-between items-center gap-8 text-brand-dark/40 text-[10px] sm:text-xs font-bold text-center">
-                            <div className="flex flex-wrap justify-center gap-6 sm:gap-10">
-                                <p>© 2024 PAINTING FLORIDA PROS. ALL RIGHTS RESERVED.</p>
-                                <p>SOUTH AVENTURA'S #1 RATED PAINTING CONTRACTORS</p>
-                            </div>
-                            <div className="flex flex-wrap justify-center gap-6 sm:gap-10">
-                                <a href="#" className="hover:text-brand-orange transition-colors">PRIVACY POLICY</a>
-                                <a href="#" className="hover:text-brand-dark/60 transition-colors">TERMS & CONDITIONS</a>
-                                <a href="#" className="hover:text-brand-dark/60 transition-colors">COOKIE SETTINGS</a>
-                                <a href="#" className="hover:text-brand-dark/60 transition-colors">ACCESSIBILITY</a>
-                            </div>
+                            {/* Column 4: Contact & Trust Badges */}
+                            <motion.div 
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: 0.6 }}
+                            >
+                                <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-brand-dark border-b border-brand-orange/20 pb-2 inline-block">Contact & Trust</h4>
+                                <div className="space-y-4 text-sm text-brand-dark/70 mb-8">
+                                    <p className="flex items-start gap-3">
+                                        <Icon name="MapPin" className="w-4 h-4 text-brand-orange shrink-0 mt-0.5" />
+                                        Serving Miami-Dade, Broward, &<br/>Palm Beach Counties.
+                                    </p>
+                                    <p className="flex items-center gap-3">
+                                        <Icon name="Phone" className="w-4 h-4 text-brand-orange shrink-0" />
+                                        <strong>954-466-4652</strong>
+                                    </p>
+                                    <p className="flex items-center gap-3">
+                                        <Icon name="Mail" className="w-4 h-4 text-brand-orange shrink-0" />
+                                        paintingfloridapros@gmail.com
+                                    </p>
+                                    <p className="flex items-center gap-3">
+                                        <Icon name="Clock" className="w-4 h-4 text-brand-orange shrink-0" />
+                                        Licensed & Fully Insured
+                                    </p>
+                                </div>
+                                <div className="flex gap-4">
+                                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md">
+                                        <div className="text-brand-orange font-black text-xs leading-none text-center">5<br/>STAR</div>
+                                    </div>
+                                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md pt-1">
+                                        <Icon name="ShieldCheck" className="w-6 h-6 text-brand-green" />
+                                    </div>
+                                    <div className="h-12 bg-white rounded-full flex items-center justify-center outline-none shadow-md px-3 border border-brand-dark/5">
+                                        <p className="text-[10px] font-bold text-center leading-tight">TOP<br/>RATED</p>
+                                    </div>
+                                </div>
+                            </motion.div>
+
                         </div>
 
-                        <div className="mt-12 pt-8 border-t border-brand-dark/5 flex justify-center items-center gap-3 text-brand-dark/40 text-[10px] sm:text-xs font-bold">
-                            <span className="text-brand-dark/10">|</span>
-                            <div className="flex items-center gap-1.5">
-                                <span>Made by</span>
-                                <a href="https://truewebx.site/" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:text-brand-yellow transition-colors flex items-center gap-1">
-                                    TrueWebX
-                                    <Icon name="ExternalLink" className="w-3 h-3" />
-                                </a>
+                        {/* Bottom Copyright Bar */}
+                        <div className="pt-8 border-t border-brand-dark/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium text-brand-dark/40">
+                            <p>© {{new Date().getFullYear()}} Painting Florida Pros. All rights reserved.</p>
+                            <div className="flex gap-6">
+                                <a href="#" className="hover:text-brand-orange transition-colors">Privacy Policy</a>
+                                <a href="#" className="hover:text-brand-orange transition-colors">Terms of Service</a>
                             </div>
                         </div>
                     </div>
