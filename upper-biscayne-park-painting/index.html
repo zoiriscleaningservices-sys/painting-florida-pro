@@ -588,7 +588,7 @@
                                         <p className="text-brand-dark/60 text-sm max-w-xs mb-8 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:-translate-y-2 transition-all duration-500">
                                             {service.description}
                                         </p>
-                                        <a href={`/${service.title.toLowerCase().replace(' painting', '').replace(' ', '-').replace('property', 'painting')}-painting.html`.replace('-painting-painting', '-painting').replace('cabinet-refinishing-painting', 'cabinet-refinishing')} className="inline-flex items-center gap-3 text-brand-orange font-black text-xs uppercase tracking-widest group/btn">
+                                        <a href={`/upper-biscayne-park-painting/${service.title.toLowerCase().replace(' painting', '').replace(' ', '-').replace('property', 'painting')}-painting/`.replace('-painting-painting/', '-painting/').replace('cabinet-refinishing-painting/', 'cabinet-refinishing/')} className="inline-flex items-center gap-3 text-brand-orange font-black text-xs uppercase tracking-widest group/btn">
                                             LEARN MORE 
                                             <div className="w-8 h-8 rounded-full border border-brand-orange/30 flex items-center justify-center group-hover/btn:bg-brand-orange group-hover/btn:text-brand-paper group-hover/btn:scale-125 transition-all">
                                                 <Icon name="ArrowRight" className="w-4 h-4" />
@@ -633,7 +633,7 @@
                                                         {service.description}
                                                     </p>
                                                     <motion.a 
-                                                        href={`/${service.title.toLowerCase().replace(' painting', '').replace(' ', '-').replace('property', 'painting')}-painting.html`.replace('-painting-painting', '-painting').replace('cabinet-refinishing-painting', 'cabinet-refinishing')}
+                                                        href={`/upper-biscayne-park-painting/${service.title.toLowerCase().replace(' painting', '').replace(' ', '-').replace('property', 'painting')}-painting/`.replace('-painting-painting/', '-painting/').replace('cabinet-refinishing-painting/', 'cabinet-refinishing/')}
                                                         whileHover={{ scale: 1.05 }}
                                                         whileTap={{ scale: 0.95 }}
                                                         className="bg-brand-orange text-brand-dark font-black px-8 py-4 rounded-2xl text-sm uppercase tracking-widest flex items-center gap-3 shadow-xl shadow-brand-orange/20 inline-flex"
@@ -873,14 +873,42 @@
                             >
                                 <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-brand-dark border-b border-brand-orange/20 pb-2 inline-block">Our Services</h4>
                                 <ul className="space-y-4">
-                                    {SERVICES.map((s, i) => (
-                                        <li key={i}>
-                                            <a href="#services" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
-                                                <Icon name="ChevronRight" className="w-3 h-3 text-brand-orange" />
-                                                {s.title}
-                                            </a>
-                                        </li>
-                                    ))}
+                                    <li>
+                                        <a href="/upper-biscayne-park-painting/residential-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                            <Icon name="ChevronRight" className="w-3 h-3 text-brand-orange" />
+                                            Residential Painting
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/upper-biscayne-park-painting/commercial-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                            <Icon name="ChevronRight" className="w-3 h-3 text-brand-orange" />
+                                            Commercial Property
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/upper-biscayne-park-painting/interior-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                            <Icon name="ChevronRight" className="w-3 h-3 text-brand-orange" />
+                                            Interior Painting
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/upper-biscayne-park-painting/exterior-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                            <Icon name="ChevronRight" className="w-3 h-3 text-brand-orange" />
+                                            Exterior Painting
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/upper-biscayne-park-painting/epoxy-flooring/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                            <Icon name="ChevronRight" className="w-3 h-3 text-brand-orange" />
+                                            Epoxy Flooring
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/upper-biscayne-park-painting/pressure-washing/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                            <Icon name="ChevronRight" className="w-3 h-3 text-brand-orange" />
+                                            Pressure Washing
+                                        </a>
+                                    </li>
                                 </ul>
                             </motion.div>
 
@@ -897,33 +925,33 @@
                                 <ul className="space-y-4">
                                 
                                     <li>
-                                        <a href="/north-biscayne-gardens-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                        <a href="/upper-tamarac-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
                                             <Icon name="MapPin" className="w-3 h-3 text-brand-orange" />
-                                            North Biscayne Gardens Painters
+                                            Upper Tamarac Painters
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/biscayne-park-crossing-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                        <a href="/west-hialeah-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
                                             <Icon name="MapPin" className="w-3 h-3 text-brand-orange" />
-                                            Biscayne Park Crossing Painters
+                                            West Hialeah Painters
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/opa-locka-point-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                        <a href="/south-palmetto-bay-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
                                             <Icon name="MapPin" className="w-3 h-3 text-brand-orange" />
-                                            Opa Locka Point Painters
+                                            South Palmetto Bay Painters
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/lower-opa-locka-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                        <a href="/bay-harbor-islands-grove-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
                                             <Icon name="MapPin" className="w-3 h-3 text-brand-orange" />
-                                            Lower Opa Locka Painters
+                                            Bay Harbor Islands Grove Painters
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/south-ives-estates-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
+                                        <a href="/south-north-miami-painting/" className="text-brand-dark/70 hover:text-brand-orange hover:translate-x-1 transition-all inline-block flex items-center gap-2 text-sm">
                                             <Icon name="MapPin" className="w-3 h-3 text-brand-orange" />
-                                            South Ives Estates Painters
+                                            South North Miami Painters
                                         </a>
                                     </li>
                                 </ul>
