@@ -202,14 +202,61 @@
         ];
 
         // --- Helper Components ---
-        const Icon = ({ name, className }) => {
-            useEffect(() => {
-                if (window.lucide) {
-                    window.lucide.createIcons();
-                }
-            }, [name]);
-            return <i data-lucide={name.toLowerCase()} className={className}></i>;
+        // All icons defined as inline SVGs to avoid Lucide CDN initialization issues
+        const ICON_PATHS = {
+            'paintbrush': { d: 'M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3zM3.14 20.8a1 1 0 0 0 .91-1.1l-.4-3 2.62 2.62a1 1 0 1 0 1.42-1.42l-2.62-2.62 3 .4a1 1 0 1 0 .27-1.98l-4.6-.62a1 1 0 0 0-1.1.91l-.62 4.6a1 1 0 0 0 .91 1.1l.21.01z', fill: false },
+            'building2': { d: 'M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18zM6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2M10 6h4M10 10h4M10 14h4M10 18h4', fill: false, multi: true },
+            'palette': { d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.1 0 2-.9 2-2v-.5c0-.26-.1-.49-.26-.68a.96.96 0 0 1 .01-1.32C14.3 17 15 16.2 15 15.17 15 13.41 13.36 12 11.33 12H10c-2.21 0-4-1.79-4-4s1.79-4 4-4h4', fill: false, extra: '<circle cx="6.5" cy="11.5" r="1.5" fill="currentColor"/><circle cx="6.5" cy="14.5" r="1.5" fill="currentColor"/><circle cx="9.5" cy="8.5" r="1.5" fill="currentColor"/><circle cx="13" cy="5.5" r="1.5" fill="currentColor"/>' },
+            'layers': { d: 'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5', fill: false, multi: true },
+            'droplet': { d: 'M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z', fill: false },
+            'hammer': { d: 'm13 12 4.35 4.35a1 1 0 0 1 0 1.41l-.6.6a1 1 0 0 1-1.42 0L11 14M8.68 3l6.36 6.36M14.5 2.5l5 5', fill: false, extra: '<path d="M15 5 3 17l2 2L17 7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' },
+            'star': { d: 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z', fill: true },
+            'phone': { d: 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.4 19.79 19.79 0 0 1 1.61 4.84 2 2 0 0 1 3.59 2.64h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l.82-.82a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 18l.64-1.08z', fill: false },
+            'menu': { d: 'M3 12h18M3 6h18M3 18h18', fill: false, multi: true },
+            'x': { d: 'M18 6L6 18M6 6l12 12', fill: false, multi: true },
+            'arrowright': { d: 'M5 12h14M12 5l7 7-7 7', fill: false, multi: true },
+            'chevrondown': { d: 'M6 9l6 6 6-6', fill: false },
+            'chevronleft': { d: 'M15 18l-6-6 6-6', fill: false },
+            'chevronright': { d: 'M9 18l6-6-6-6', fill: false },
+            'mappin': { d: 'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z', fill: false, extra: '<circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"/>' },
+            'mail': { d: 'M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z', fill: false, extra: '<polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/>' },
+            'clock': { d: 'M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z', fill: false, extra: '<polyline points="12,6 12,12 16,14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' },
+            'shieldcheck': { d: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z', fill: false, extra: '<path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' },
         };
+
+        const Icon = ({ name, className }) => {
+            const key = name.toLowerCase();
+            const icon = ICON_PATHS[key];
+            if (!icon) return null;
+            const paths = icon.multi
+                ? icon.d.split('M').filter(Boolean).map((seg, i) => <path key={i} d={'M'+seg.trim()} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>)
+                : [<path key="p" d={icon.d} fill={icon.fill ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>];
+            return (
+                <svg viewBox="0 0 24 24" className={className} xmlns="http://www.w3.org/2000/svg" style={{display:'inline-block',verticalAlign:'middle'}}>
+                    {paths}
+                    {icon.extra && <g dangerouslySetInnerHTML={{__html: icon.extra}} />}
+                </svg>
+            );
+        };
+
+        // Inline SVG social icons
+        const InstagramIcon = ({ className }) => (
+            <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+        );
+        const XIcon = ({ className }) => (
+            <svg viewBox="0 0 24 24" className={className} fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+            </svg>
+        );
+        const PinterestIcon = ({ className }) => (
+            <svg viewBox="0 0 24 24" className={className} fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.261 7.929-7.261 4.162 0 7.398 2.967 7.398 6.93 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592 0 12.017 0z"/>
+            </svg>
+        );
 
         const Navbar = () => {
             const [isOpen, setIsOpen] = useState(false);
@@ -357,13 +404,13 @@
                                             <p className="text-xs font-bold text-brand-dark/60 uppercase tracking-widest">Connect with us</p>
                                             <div className="flex gap-6">
                                                 <a href="https://www.instagram.com/paintingfloridapros/" target="_blank" rel="noopener noreferrer" className="text-brand-dark hover:text-brand-orange transition-colors">
-                                                    <Icon name="Instagram" className="w-8 h-8" />
+                                                    <InstagramIcon className="w-8 h-8" />
                                                 </a>
                                                 <a href="https://x.com/paintingflpros" target="_blank" rel="noopener noreferrer" className="text-brand-dark hover:text-brand-orange transition-colors">
-                                                    <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                                                    <XIcon className="w-8 h-8" />
                                                 </a>
                                                 <a href="https://www.pinterest.com/paintingflorida/_profile/" target="_blank" rel="noopener noreferrer" className="text-brand-dark hover:text-brand-orange transition-colors">
-                                                    <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.261 7.929-7.261 4.162 0 7.398 2.967 7.398 6.93 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592 0 12.017 0z"/></svg>
+                                                    <PinterestIcon className="w-8 h-8" />
                                                 </a>
                                             </div>
                                         </div>
@@ -442,10 +489,10 @@
                                 <div className="h-8 w-px bg-brand-dark/10 hidden sm:block" />
                                 <div className="flex gap-4">
                                     <motion.a whileHover={{ scale: 1.2, rotate: 15 }} whileTap={{ scale: 0.9 }} href="https://www.instagram.com/paintingfloridapros/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-dark/5 flex items-center justify-center text-brand-dark hover:bg-brand-orange hover:text-brand-paper transition-all">
-                                        <Icon name="Instagram" className="w-5 h-5" />
+                                        <InstagramIcon className="w-5 h-5" />
                                     </motion.a>
                                     <motion.a whileHover={{ scale: 1.2, rotate: -15 }} whileTap={{ scale: 0.9 }} href="https://x.com/paintingflpros" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-dark/5 flex items-center justify-center text-brand-dark hover:bg-brand-orange hover:text-brand-paper transition-all">
-                                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                                        <XIcon className="w-5 h-5" />
                                     </motion.a>
                                 </div>
                             </div>
@@ -801,13 +848,13 @@
                                 </p>
                                 <div className="flex gap-4 justify-center sm:justify-start">
                                     <motion.a whileHover={{ scale: 1.2, rotate: 15 }} whileTap={{ scale: 0.9 }} href="https://www.instagram.com/paintingfloridapros/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-dark/5 flex items-center justify-center text-brand-dark hover:bg-brand-orange hover:text-brand-paper transition-colors">
-                                        <Icon name="Instagram" className="w-5 h-5" />
+                                        <InstagramIcon className="w-5 h-5" />
                                     </motion.a>
                                     <motion.a whileHover={{ scale: 1.2, rotate: -15 }} whileTap={{ scale: 0.9 }} href="https://x.com/paintingflpros" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-dark/5 flex items-center justify-center text-brand-dark hover:bg-brand-orange hover:text-brand-paper transition-colors">
-                                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                                        <XIcon className="w-5 h-5" />
                                     </motion.a>
                                     <motion.a whileHover={{ scale: 1.2, rotate: 15 }} whileTap={{ scale: 0.9 }} href="https://www.pinterest.com/paintingflorida/_profile/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-dark/5 flex items-center justify-center text-brand-dark hover:bg-brand-orange hover:text-brand-paper transition-colors">
-                                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.261 7.929-7.261 4.162 0 7.398 2.967 7.398 6.93 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592 0 12.017 0z"/></svg>
+                                        <PinterestIcon className="w-5 h-5" />
                                     </motion.a>
                                 </div>
                             </motion.div>
@@ -966,6 +1013,13 @@
         };
 
         function App() {
+            useEffect(() => {
+                // Ensure all Lucide icons are initialized after full render
+                if (window.lucide) {
+                    window.lucide.createIcons();
+                }
+            });
+
             return (
                 <div className="min-h-screen bg-brand-light text-brand-dark selection:bg-brand-orange selection:text-brand-paper">
                     <Navbar />
